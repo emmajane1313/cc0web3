@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+
+Sitemap: https://cc0web3.com/sitemap.xml
