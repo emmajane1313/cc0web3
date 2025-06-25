@@ -1,6 +1,5 @@
 "use client";
 
-import { Context, PublicClient, mainnet } from "@lens-protocol/client";
 import {
   createContext,
   RefObject,
@@ -16,7 +15,6 @@ export const ModalContext = createContext<
   | {
       afis: Media;
       setAfis: (e: SetStateAction<Media>) => void;
-      clienteLens: PublicClient<Context> | undefined;
       play: boolean;
       setPlay: (e: SetStateAction<boolean>) => void;
       video: Media;
@@ -42,7 +40,6 @@ export const ModalContext = createContext<
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   const [play, setPlay] = useState<boolean>(false);
-  const [clienteLens, setClienteLens] = useState<PublicClient | undefined>();
   const vid = useRef<HTMLVideoElement | null>(null);
   const [video, setVideo] = useState<Media>(VIDEOS[0]);
   const [afis, setAfis] = useState<Media>(AFIS[0]);
@@ -58,21 +55,9 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     nodes: null,
   });
 
-  useEffect(() => {
-    if (!clienteLens) {
-      setClienteLens(
-        PublicClient.create({
-          environment: mainnet,
-          storage: window.localStorage,
-        })
-      );
-    }
-  }, []);
-
   return (
     <ModalContext.Provider
       value={{
-        clienteLens,
         vid,
         video,
         setVideo,
