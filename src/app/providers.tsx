@@ -4,7 +4,6 @@ import {
   createContext,
   RefObject,
   SetStateAction,
-  useEffect,
   useRef,
   useState,
 } from "react";

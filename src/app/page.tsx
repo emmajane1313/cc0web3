@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <Wrapper>
       <div className="relative flex flex-col md:flex-row w-full justify-between lg:order-2 order-1 gap-6">
-        <div className="w-3/5 text-center w-full">
+        <div className="w-3/5 text-center w-full h-full flex flex-col justify-between">
           <div className="text-yellow-300 text-xs">
             DOWNLOAD | <span className="text-red-500">PUT UP</span> | DOWNLOAD
           </div>
@@ -45,21 +45,23 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div className="my-4 bg-red-900 text-yellow-300 text-lg font-bold">
-            «« VOID NEO-ROMAN COLLABORATORS »»
-          </div>
-          <div className="flex relative w-full h-fit">
-            <video
-              draggable={false}
-              poster={contexto?.afis?.imagen}
-              className="object-cover flex relative w-full h-96"
-              autoPlay
-              loop
-              muted
-              key={contexto?.afis?.imagen}
-            >
-              <source src={contexto?.afis?.video} />
-            </video>
+          <div className="relative w-full h-fit flex flex-col gap-2">
+            <div className="my-4 bg-red-900 text-yellow-300 text-lg font-bold">
+              «« VOID NEO-ROMAN COLLABORATORS »»
+            </div>
+            <div className="flex relative w-full h-fit">
+              <video
+                draggable={false}
+                poster={contexto?.afis?.imagen}
+                className="object-cover flex relative w-full h-96"
+                autoPlay
+                loop
+                muted
+                key={contexto?.afis?.imagen}
+              >
+                <source src={contexto?.afis?.video} />
+              </video>
+            </div>
           </div>
         </div>
         <Stats />

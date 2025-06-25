@@ -14,14 +14,16 @@ function Wrapper({ children }: { children: ReactNode }) {
       <Header />
 
       <div className="flex px-4 py-6 gap-6 justify-between h-full w-full grow flex-col lg:flex-row">
-        <div className="w-full lg:w-fit h-full relative text-white flex lg:order-1 order-2">
-          <div className="relative w-full lg:w-60 flex flex-col gap-4 text-xs justify-between h-full">
-            <div className="bg-red-800 p-2">THE NETWORK EDGE »</div>
-            <div className="bg-black border border-red-700 p-2 text-red-600">
+        <div className="w-full lg:w-fit relative text-white flex lg:order-1 order-2 justify-between">
+          <div className="relative w-full lg:w-60 flex flex-col gap-4 text-xs justify-between">
+            <div className="flex  w-full h-fit bg-red-800 p-2">
+              THE NETWORK EDGE »
+            </div>
+            <div className="flex w-full h-fit bg-black border border-red-700 p-2 text-red-600">
               DYOR. Viewer discretion is your own responsibility.
             </div>
-            <div className="bg-red-800 p-2">AFIŞLER</div>
-            <ul className="pl-4 list-disc text-yellow-300">
+            <div className="flex w-full h-fit bg-red-800 p-2">AFIŞLER</div>
+            <ul className="flex w-full h-fit flex-col pl-4 list-disc text-yellow-300">
               {Array.from({ length: 5 }).map((_, i) => (
                 <li
                   onClick={() => contexto?.setAfis(AFIS[i])}
@@ -32,8 +34,8 @@ function Wrapper({ children }: { children: ReactNode }) {
                 </li>
               ))}
             </ul>
-            <div className="bg-red-800 p-2">VIDEOLAR</div>
-            <ul className="pl-4 list-disc text-yellow-300">
+            <div className="flex w-full h-fit bg-red-800 p-2">VIDEOLAR</div>
+            <ul className="flex w-full h-fit flex-col pl-4 list-disc text-yellow-300">
               {VIDEOS.map((_, i) => (
                 <li
                   className="hover:underline cursor-pointer"
@@ -52,33 +54,35 @@ function Wrapper({ children }: { children: ReactNode }) {
                 </li>
               ))}
             </ul>
-            <div className="flex flex-row w-full gap-2">
-              <div
-                className="relative p-2 w-full hover:opacity-80 justify-center h-fit flex bg-red-800 cursor-pointer"
-                onClick={() => handlePlay(!contexto?.play)}
-              >
-                {contexto?.play ? "ПАУЗА" : "ВІДТВОРИТИ"}
-              </div>
-              <div
-                className="relative p-2 w-full hover:opacity-80 justify-center  h-fit flex bg-red-800 cursor-pointer"
-                onClick={() => window.open(contexto?.video?.enlace)}
-              >
-                ІНФО
-              </div>
-            </div>
-
-            <div className="relative w-full h-full flex">
-              {contexto?.video && (
-                <video
-                  key={contexto?.video?.titulo}
-                  ref={contexto?.vid}
-                  className="relative border border-yellow-400 flex object-cover w-full h-full"
-                  draggable={false}
-                  poster={contexto?.video?.imagen}
+            <div className="relative w-full h-full items-end justify-end flex flex-col gap-2">
+              <div className="w-full h-fit flex flex-row w-full gap-2">
+                <div
+                  className="relative p-2 w-full hover:opacity-80 justify-center h-fit flex bg-red-800 cursor-pointer"
+                  onClick={() => handlePlay(!contexto?.play)}
                 >
-                  <source src={contexto?.video?.video} />
-                </video>
-              )}
+                  {contexto?.play ? "ПАУЗА" : "ВІДТВОРИТИ"}
+                </div>
+                <div
+                  className="relative p-2 w-full hover:opacity-80 justify-center  h-fit flex bg-red-800 cursor-pointer"
+                  onClick={() => window.open(contexto?.video?.enlace)}
+                >
+                  ІНФО
+                </div>
+              </div>
+
+              <div className="relative w-full h-fit flex">
+                {contexto?.video && (
+                  <video
+                    key={contexto?.video?.titulo}
+                    ref={contexto?.vid}
+                    className="relative border border-yellow-400 flex object-cover w-full h-40"
+                    draggable={false}
+                    poster={contexto?.video?.imagen}
+                  >
+                    <source src={contexto?.video?.video} />
+                  </video>
+                )}
+              </div>
             </div>
           </div>
         </div>
