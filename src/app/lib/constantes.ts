@@ -151,6 +151,14 @@ export const TRANSMIT: Media[] = [
     imagen:
       "https://chromadin.xyz/api/infura/QmTvBiJLh1QtFLU9UJRq1nKDgQgvCvktauCZC6k6hMhGXA",
   },
+   {
+    titulo: "Litvision",
+
+    video:
+      "https://gw.ipfs-lens.dev/ipfs/bafybeifd3sv4tc6y6dqjjrsbvbx5zylfm3gyayhn4otb3vlc6mrweguqna",
+    imagen:
+      "https://chromadin.xyz/api/infura/QmekBD7Xz1GRrFKGm4KWVLxme1W3QTnGqNdY2VJjM18hmb",
+  },
   {
     titulo: "In The Street It’s Just Available",
 
