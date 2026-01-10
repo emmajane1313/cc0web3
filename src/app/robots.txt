@@ -3,3 +3,4 @@ Allow: /
 
 
 Sitemap: https://cc0web3.com/sitemap.xml
+Sitemap: https://cc0web3.com/sitemap-video.xml

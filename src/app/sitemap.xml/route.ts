@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { ARTE } from "../lib/constantes";
+import { AFIS, ARTE, TRANSMIT, VIDEOS } from "../lib/constantes";
 import { SITE_ROUTES } from "../lib/siteRoutes";
 
 export async function GET() {
@@ -7,13 +7,60 @@ export async function GET() {
 
   const imagesXml = () =>
     SITE_ROUTES.map((route) => {
-      const isArte = route.path === "/arte";
-      const images = isArte
-        ? ARTE.map((item) => ({
-            title: item.alt,
-            src: item.src,
-          }))
-        : route.images;
+      const imagesByPath: Record<string, { title: string; src: string }[]> = {
+        "/": [
+          ...route.images,
+          ...AFIS.map((item) => ({
+            title: item.titulo,
+            src: item.imagen,
+          })),
+        ],
+        "/arte": ARTE.map((item) => ({
+          title: item.alt,
+          src: item.src,
+        })),
+        "/video": VIDEOS.map((item) => ({
+          title: item.titulo,
+          src: item.imagen,
+        })),
+        "/transmissions": TRANSMIT.map((item) => ({
+          title: item.titulo,
+          src: item.imagen,
+        })),
+        "/noticias": [
+          {
+            title: "Noticias",
+            src: "/images/compman.png",
+          },
+        ],
+        "/rugpulls": [
+          {
+            title: "Rugpulls",
+            src: "/images/rugpulls.png",
+          },
+        ],
+        "/roots": [
+          {
+            title: "Roots",
+            src: "/images/chica.png",
+          },
+          {
+            title: "Aaron Swartz",
+            src: "/images/aaron.png",
+          },
+          {
+            title: "Len Sassaman",
+            src: "/images/len.png",
+          },
+          {
+            title: "Ilya Zhitomirskiy",
+            src: "/images/ilya.png",
+          },
+        ],
+      };
+
+      const routePath = route.path || "/";
+      const images = imagesByPath[routePath] || route.images;
 
       return `
       <url>
