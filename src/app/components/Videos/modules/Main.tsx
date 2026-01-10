@@ -20,6 +20,7 @@ function Main() {
     currentTime,
   } = useControls();
   const { handlePlay } = useVideo();
+  const videoTitle = contexto?.video?.titulo || "CC0 Web3 video";
 
   return (
     <div className="relative w-full h-fit flex items-center justify-center  lg:order-2 order-1">
@@ -35,6 +36,8 @@ function Main() {
               className="relative border border-yellow-400 flex object-cover w-full h-[20rem] md:h-[30rem]"
               draggable={false}
               poster={contexto?.video?.imagen}
+              title={videoTitle}
+              aria-label={videoTitle}
             >
               <source src={contexto?.video?.video} />
             </video>

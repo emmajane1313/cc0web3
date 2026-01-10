@@ -1,94 +1,35 @@
 import { NextResponse } from "next/server";
 import { ARTE } from "../lib/constantes";
+import { SITE_ROUTES } from "../lib/siteRoutes";
 
 export async function GET() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://cc0web3.com";
 
   const imagesXml = () =>
-    [
-      {
-        imagenes: [
-          {
-            portada: "/images/neoroman.png",
-            titulo: "Disappear quietly",
-          },
-          {
-            portada: "/images/wisely.png",
-            titulo: "Choose Wisely",
-          },
-          {
-            portada: "/images/forest.png",
-            titulo: "In the Dark Forest",
-          },
-        ],
-        enlace: "",
-      },
-      {
-        imagenes: [],
-        enlace: "video/",
-      },
-      {
-        imagenes: [],
-        enlace: "transmissions/",
-      },
-      {
-        imagenes: [],
-        enlace: "roots/",
-      },
-      {
-        imagenes: [],
-        enlace: "noticias/",
-      },
-      {
-        imagenes: [],
-        enlace: "myth-vs-reality/",
-      },
-      {
-        imagenes: [],
-        enlace: "manifestos-and-dead-ends/",
-      },
-      {
-        imagenes: [],
-        enlace: "cc0-in-practice/",
-      },
-      {
-        imagenes: [],
-        enlace: "cadenas-falsas/",
-      },
-      {
-        imagenes: ARTE.map((item) => ({
-          titulo: item?.alt,
-          portada: item?.src,
-        })),
-        enlace: "arte/",
-      },
-      {
-        imagenes: [],
-        enlace: "privacy-and-autonomy/",
-      },
-      {
-        imagenes: [],
-        enlace: "rugpulls/",
-      },
-    ]
-      .map(
-        (item) =>
-          `
+    SITE_ROUTES.map((route) => {
+      const isArte = route.path === "/arte";
+      const images = isArte
+        ? ARTE.map((item) => ({
+            title: item.alt,
+            src: item.src,
+          }))
+        : route.images;
+
+      return `
       <url>
-        <loc>${baseUrl}/${item.enlace}</loc>
-        ${item.imagenes?.map(
-          (img) => ` <image:image>
-            <image:loc>${baseUrl}${img.portada}</image:loc>
-            <image:title><![CDATA[${img.titulo} | Emma-Jane MacKinnon-Lee]]></image:title>
-            <image:caption><![CDATA[${img.titulo} | Emma-Jane MacKinnon-Lee]]></image:caption>
+        <loc>${baseUrl}${route.path}</loc>
+        ${images
+          .map(
+            (img) => ` <image:image>
+            <image:loc>${baseUrl}${img.src}</image:loc>
+            <image:title><![CDATA[${img.title} | Emma-Jane MacKinnon-Lee]]></image:title>
+            <image:caption><![CDATA[${img.title} | Emma-Jane MacKinnon-Lee]]></image:caption>
           </image:image>`
-        )}
-       
- 
+          )
+          .join("")}
       </url>
-        `
-      )
-      .join("");
+        `;
+    }).join("");
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset 

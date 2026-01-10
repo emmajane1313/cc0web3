@@ -3,12 +3,18 @@ import Wrapper from "../components/Common/modules/Wrapper";
 import DeadEnd from "../components/Common/modules/DeadEnd";
 
 export const metadata: Metadata = {
-    title: "Manifestos & Dead Ends",
+  title: "Manifestos & Dead Ends - CC0 Web3 by Emma-Jane MacKinnon-Lee",
+  description: "For the mailing list moderators.",
+  keywords: ["Emma-Jane MacKinnon-Lee", "Manifestos", "Web3", "F3Manifesto"],
+  authors: [{ name: "Emma-Jane MacKinnon-Lee" }],
   twitter: {
-      title: "Manifestos & Dead Ends",
+    card: "summary_large_image",
+    title: "Manifestos & Dead Ends - CC0 Web3 by Emma-Jane MacKinnon-Lee",
+    description: "For the mailing list moderators.",
   },
   openGraph: {
-    title: "Manifestos & Dead Ends",
+    title: "Manifestos & Dead Ends - CC0 Web3 by Emma-Jane MacKinnon-Lee",
+    description: "For the mailing list moderators.",
   },
 };
 

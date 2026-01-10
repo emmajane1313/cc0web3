@@ -3,12 +3,18 @@ import Wrapper from "../components/Common/modules/Wrapper";
 import Reality from "../components/Common/modules/Reality";
 
 export const metadata: Metadata = {
-  title: "Myth Vs Reality",
+  title: "Myth Vs Reality - CC0 Web3 by Emma-Jane MacKinnon-Lee",
+  description: "For the mailing list moderators.",
+  keywords: ["Emma-Jane MacKinnon-Lee", "Myth", "Reality", "Web3"],
+  authors: [{ name: "Emma-Jane MacKinnon-Lee" }],
   twitter: {
-    title: "Myth Vs Reality",
+    card: "summary_large_image",
+    title: "Myth Vs Reality - CC0 Web3 by Emma-Jane MacKinnon-Lee",
+    description: "For the mailing list moderators.",
   },
   openGraph: {
-    title: "Myth Vs Reality",
+    title: "Myth Vs Reality - CC0 Web3 by Emma-Jane MacKinnon-Lee",
+    description: "For the mailing list moderators.",
   },
 };
 

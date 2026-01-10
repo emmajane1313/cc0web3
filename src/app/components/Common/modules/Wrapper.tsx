@@ -9,6 +9,7 @@ import { AFIS, VIDEOS } from "@/app/lib/constantes";
 function Wrapper({ children }: { children: ReactNode }) {
   const contexto = useContext(ModalContext);
   const { handlePlay } = useVideo();
+  const previewTitle = contexto?.video?.titulo || "CC0 Web3 video preview";
   return (
     <div className="bg-black text-red-600 min-h-screen font-sans justify-between flex flex-col">
       <Header />
@@ -78,6 +79,8 @@ function Wrapper({ children }: { children: ReactNode }) {
                     className="relative border border-yellow-400 flex object-cover w-full h-40"
                     draggable={false}
                     poster={contexto?.video?.imagen}
+                    title={previewTitle}
+                    aria-label={previewTitle}
                   >
                     <source src={contexto?.video?.video} />
                   </video>

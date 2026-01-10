@@ -8,51 +8,51 @@ export const GROVE_GATEWAY: string = "https://api.grove.storage/";
 export const ARTE: { alt: string; src: string }[] = [
   {
     src: "/images/arte1.png",
-    alt: "Zero Signal",
+    alt: "Zero Signal - CC0 Street Art by Emma-Jane MacKinnon-Lee",
   },
   {
     src: "/images/arte2.png",
-    alt: "Keypair Bloom",
+    alt: "Keypair Bloom - CC0 Street Art by Emma-Jane MacKinnon-Lee",
   },
   {
     src: "/images/arte3.png",
-    alt: "Cache Hell",
+    alt: "Cache Hell - CC0 Street Art by Emma-Jane MacKinnon-Lee",
   },
   {
     src: "/images/arte4.png",
-    alt: "Noise Script",
+    alt: "Noise Script - CC0 Street Art by Emma-Jane MacKinnon-Lee",
   },
   {
     src: "/images/arte5.png",
-    alt: "Proof of Drift",
+    alt: "Proof of Drift - CC0 Street Art by Emma-Jane MacKinnon-Lee",
   },
   {
     src: "/images/arte6.png",
-    alt: "Backdoor Dream",
+    alt: "Backdoor Dream - CC0 Street Art by Emma-Jane MacKinnon-Lee",
   },
   {
     src: "/images/arte7.png",
-    alt: "Nodebloom",
+    alt: "Nodebloom - CC0 Street Art by Emma-Jane MacKinnon-Lee",
   },
   {
     src: "/images/arte8.png",
-    alt: "Dead Payload",
+    alt: "Dead Payload - CC0 Street Art by Emma-Jane MacKinnon-Lee",
   },
   {
     src: "/images/arte9.png",
-    alt: "Quantum Trash",
+    alt: "Quantum Trash - CC0 Street Art by Emma-Jane MacKinnon-Lee",
   },
   {
     src: "/images/arte10.png",
-    alt: "404 Syntax",
+    alt: "404 Syntax - CC0 Street Art by Emma-Jane MacKinnon-Lee",
   },
   {
     src: "/images/arte11.png",
-    alt: "Consensus Noise",
+    alt: "Consensus Noise - CC0 Street Art by Emma-Jane MacKinnon-Lee",
   },
   {
     src: "/images/arte12.png",
-    alt: "Underflow Ghost",
+    alt: "Underflow Ghost - CC0 Street Art by Emma-Jane MacKinnon-Lee",
   },
 ];
 

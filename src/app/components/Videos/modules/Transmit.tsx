@@ -21,6 +21,7 @@ function Transmit() {
     currentTime,
     setVideo,
   } = useTransmit();
+  const videoTitle = video?.titulo || "CC0 Web3 transmission video";
 
   return (
     <div className="relative   lg:order-2 order-1 w-full h-fit flex items-center justify-center">
@@ -55,6 +56,8 @@ function Transmit() {
               className="relative border border-yellow-400 flex object-cover w-full h-[20rem] sm:h-[30rem]"
               draggable={false}
               poster={video?.imagen}
+              title={videoTitle}
+              aria-label={videoTitle}
             >
               <source src={video?.video} />
             </video>
