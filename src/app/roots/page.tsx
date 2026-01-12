@@ -1,10 +1,14 @@
 import { Metadata } from "next";
 import Wrapper from "../components/Common/modules/Wrapper";
 import Image from "next/image";
+import { DEFAULT_UPLOAD_DATE } from "../lib/constantes";
 
 export const metadata: Metadata = {
   title: "Roots - CC0 Web3 by Emma-Jane MacKinnon-Lee",
   description: "For the mailing list moderators.",
+  alternates: {
+    canonical: "/roots/",
+  },
   keywords: ["Emma-Jane MacKinnon-Lee", "Aaron Swartz", "Len Sassaman", "Ilya Zhitomirskiy", "Open Source Roots"],
   authors: [{ name: "Emma-Jane MacKinnon-Lee" }],
   twitter: {
@@ -26,6 +30,7 @@ export default function Roots() {
     description: "Loop video for the Roots page by Emma-Jane MacKinnon-Lee.",
     thumbnailUrl: "https://cc0web3.com/images/chica.png",
     contentUrl: "https://cc0web3.com/videos/chica.mp4",
+    uploadDate: DEFAULT_UPLOAD_DATE,
     creator: {
       "@type": "Person",
       name: "Emma-Jane MacKinnon-Lee",

@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
-import { AFIS, TRANSMIT, VIDEOS } from "../lib/constantes";
+import { AFIS, DEFAULT_UPLOAD_DATE, TRANSMIT, VIDEOS } from "../lib/constantes";
 
 const toAbsolute = (baseUrl: string, url: string) =>
   url.startsWith("/") ? `${baseUrl}${url}` : url;
+const withTrailingSlash = (url: string) => (url.endsWith("/") ? url : `${url}/`);
 
 export async function GET() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://cc0web3.com";
@@ -14,67 +15,74 @@ export async function GET() {
       description: string;
       thumbnail: string;
       content: string;
+      uploadDate: string;
     }[];
   }[] = [
     {
-      loc: `${baseUrl}/`,
+      loc: withTrailingSlash(`${baseUrl}/`),
       videos: AFIS.map((video) => ({
         title: video.titulo,
         description: "Loop video from CC0 Web3 by Emma-Jane MacKinnon-Lee.",
         thumbnail: toAbsolute(baseUrl, video.imagen),
         content: toAbsolute(baseUrl, video.video),
+        uploadDate: DEFAULT_UPLOAD_DATE,
       })),
     },
     {
-      loc: `${baseUrl}/noticias`,
+      loc: withTrailingSlash(`${baseUrl}/noticias`),
       videos: [
         {
           title: "Noticias loop video",
           description: "Loop video for the Noticias page by Emma-Jane MacKinnon-Lee.",
           thumbnail: `${baseUrl}/images/compman.png`,
           content: `${baseUrl}/videos/compman.mp4`,
+          uploadDate: DEFAULT_UPLOAD_DATE,
         },
       ],
     },
     {
-      loc: `${baseUrl}/rugpulls`,
+      loc: withTrailingSlash(`${baseUrl}/rugpulls`),
       videos: [
         {
           title: "Rugpulls loop video",
           description: "Loop video for the Rugpulls page by Emma-Jane MacKinnon-Lee.",
           thumbnail: `${baseUrl}/images/rugpulls.png`,
           content: `${baseUrl}/videos/rugpulls.mp4`,
+          uploadDate: DEFAULT_UPLOAD_DATE,
         },
       ],
     },
     {
-      loc: `${baseUrl}/roots`,
+      loc: withTrailingSlash(`${baseUrl}/roots`),
       videos: [
         {
           title: "Roots loop video",
           description: "Loop video for the Roots page by Emma-Jane MacKinnon-Lee.",
           thumbnail: `${baseUrl}/images/chica.png`,
           content: `${baseUrl}/videos/chica.mp4`,
+          uploadDate: DEFAULT_UPLOAD_DATE,
         },
       ],
     },
     {
-      loc: `${baseUrl}/video`,
+      loc: withTrailingSlash(`${baseUrl}/video`),
       videos: VIDEOS.map((video) => ({
         title: video.titulo,
         description:
           video.contenido || "CC0 Web3 video by Emma-Jane MacKinnon-Lee.",
         thumbnail: toAbsolute(baseUrl, video.imagen),
         content: toAbsolute(baseUrl, video.video),
+        uploadDate: DEFAULT_UPLOAD_DATE,
       })),
     },
     {
-      loc: `${baseUrl}/transmissions`,
+      loc: withTrailingSlash(`${baseUrl}/transmissions`),
       videos: TRANSMIT.map((video) => ({
         title: video.titulo,
         description: "CC0 Web3 transmission by Emma-Jane MacKinnon-Lee.",
         thumbnail: toAbsolute(baseUrl, video.imagen),
         content: toAbsolute(baseUrl, video.video),
+        uploadDate: DEFAULT_UPLOAD_DATE,
       })),
     },
   ];
@@ -97,6 +105,7 @@ export async function GET() {
       <video:description><![CDATA[${video.description}]]></video:description>
       <video:thumbnail_loc>${video.thumbnail}</video:thumbnail_loc>
       <video:content_loc>${video.content}</video:content_loc>
+      <video:publication_date>${video.uploadDate}</video:publication_date>
     </video:video>`
       )
       .join("")}

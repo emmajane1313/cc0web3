@@ -4,6 +4,8 @@ import { SITE_ROUTES } from "../lib/siteRoutes";
 
 export async function GET() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://cc0web3.com";
+  const withTrailingSlash = (path: string) =>
+    path.endsWith("/") ? path : `${path}/`;
 
   const imagesXml = () =>
     SITE_ROUTES.map((route) => {
@@ -60,11 +62,12 @@ export async function GET() {
       };
 
       const routePath = route.path || "/";
+      const locPath = routePath === "" ? "/" : routePath;
       const images = imagesByPath[routePath] || route.images;
 
       return `
       <url>
-        <loc>${baseUrl}${route.path}</loc>
+        <loc>${baseUrl}${withTrailingSlash(locPath)}</loc>
         ${images
           .map(
             (img) => ` <image:image>

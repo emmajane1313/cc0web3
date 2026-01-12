@@ -6,6 +6,9 @@ import { ARTE } from "../lib/constantes";
 export const metadata: Metadata = {
   title: "Arte - CC0 Web3 by Emma-Jane MacKinnon-Lee",
   description: "For the mailing list moderators.",
+  alternates: {
+    canonical: "/arte/",
+  },
   keywords: ["Emma-Jane MacKinnon-Lee", "Arte CC0", "Web3 Art", "Open Source Art", "Street Art"],
   authors: [{ name: "Emma-Jane MacKinnon-Lee" }],
   twitter: {

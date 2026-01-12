@@ -5,6 +5,9 @@ import CC0 from "../components/Common/modules/CC0";
 export const metadata: Metadata = {
   title: "CC0 In Practice - CC0 Web3 by Emma-Jane MacKinnon-Lee",
   description: "For the mailing list moderators.",
+  alternates: {
+    canonical: "/cc0-in-practice/",
+  },
   keywords: ["Emma-Jane MacKinnon-Lee", "CC0", "Open Source", "Creative Commons"],
   authors: [{ name: "Emma-Jane MacKinnon-Lee" }],
   twitter: {

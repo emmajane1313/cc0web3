@@ -1,11 +1,14 @@
 import { Metadata } from "next";
 import Home from "./components/Home";
-import { AFIS } from "./lib/constantes";
+import { AFIS, DEFAULT_UPLOAD_DATE } from "./lib/constantes";
 
 export const metadata: Metadata = {
   title: "CC0 Web3 by Emma-Jane MacKinnon-Lee",
   description:
     "CC0 web3 art, transmissions, and videos by Emma-Jane MacKinnon-Lee.",
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "Emma-Jane MacKinnon-Lee",
     "CC0 Web3",
@@ -39,6 +42,7 @@ export default function Page() {
       description: "Loop video from CC0 Web3 by Emma-Jane MacKinnon-Lee.",
       thumbnailUrl: `https://cc0web3.com${video.imagen}`,
       contentUrl: `https://cc0web3.com${video.video}`,
+      uploadDate: DEFAULT_UPLOAD_DATE,
       creator: {
         "@type": "Person",
         name: "Emma-Jane MacKinnon-Lee",

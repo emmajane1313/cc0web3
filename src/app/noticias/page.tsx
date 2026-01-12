@@ -1,9 +1,13 @@
 import { Metadata } from "next";
 import Wrapper from "../components/Common/modules/Wrapper";
+import { DEFAULT_UPLOAD_DATE } from "../lib/constantes";
 
 export const metadata: Metadata = {
   title: "Noticias - CC0 Web3 by Emma-Jane MacKinnon-Lee",
   description: "For the mailing list moderators.",
+  alternates: {
+    canonical: "/noticias/",
+  },
   keywords: ["Emma-Jane MacKinnon-Lee", "Web3 News", "Noticias Web3", "CC0"],
   authors: [{ name: "Emma-Jane MacKinnon-Lee" }],
   twitter: {
@@ -25,6 +29,7 @@ export default function Noticias() {
     description: "Loop video for the Noticias page by Emma-Jane MacKinnon-Lee.",
     thumbnailUrl: "https://cc0web3.com/images/compman.png",
     contentUrl: "https://cc0web3.com/videos/compman.mp4",
+    uploadDate: DEFAULT_UPLOAD_DATE,
     creator: {
       "@type": "Person",
       name: "Emma-Jane MacKinnon-Lee",

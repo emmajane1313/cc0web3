@@ -1,11 +1,14 @@
 import { Metadata } from "next";
 import Wrapper from "../components/Common/modules/Wrapper";
 import Main from "../components/Videos/modules/Main";
-import { VIDEOS } from "../lib/constantes";
+import { DEFAULT_UPLOAD_DATE, VIDEOS } from "../lib/constantes";
 
 export const metadata: Metadata = {
   title: "Vídeo - CC0 Web3 by Emma-Jane MacKinnon-Lee",
   description: "For the mailing list moderators.",
+  alternates: {
+    canonical: "/video/",
+  },
   keywords: ["Emma-Jane MacKinnon-Lee", "Videos Web3", "CC0 Video", "Web3 Fashion Video"],
   authors: [{ name: "Emma-Jane MacKinnon-Lee" }],
   twitter: {
@@ -33,6 +36,7 @@ export default function Video() {
         "CC0 Web3 video by Emma-Jane MacKinnon-Lee.",
       thumbnailUrl: video.imagen,
       contentUrl: video.video,
+      uploadDate: DEFAULT_UPLOAD_DATE,
       creator: {
         "@type": "Person",
         name: "Emma-Jane MacKinnon-Lee",

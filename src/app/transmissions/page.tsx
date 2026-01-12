@@ -1,11 +1,14 @@
 import { Metadata } from "next";
 import Wrapper from "../components/Common/modules/Wrapper";
 import Transmit from "../components/Videos/modules/Transmit";
-import { TRANSMIT } from "../lib/constantes";
+import { DEFAULT_UPLOAD_DATE, TRANSMIT } from "../lib/constantes";
 
 export const metadata: Metadata = {
   title: "Transmissions - CC0 Web3 by Emma-Jane MacKinnon-Lee",
   description: "For the mailing list moderators.",
+  alternates: {
+    canonical: "/transmissions/",
+  },
   keywords: ["Emma-Jane MacKinnon-Lee", "Transmissions", "Videos", "Web3"],
   authors: [{ name: "Emma-Jane MacKinnon-Lee" }],
   twitter: {
@@ -31,6 +34,7 @@ export default function Transmissions() {
       description: "CC0 Web3 transmission by Emma-Jane MacKinnon-Lee.",
       thumbnailUrl: video.imagen,
       contentUrl: video.video,
+      uploadDate: DEFAULT_UPLOAD_DATE,
       creator: {
         "@type": "Person",
         name: "Emma-Jane MacKinnon-Lee",

@@ -4,6 +4,7 @@ export const INFURA_GATEWAY: string = "https://chromadin.infura-ipfs.io";
 export const INFURA_GATEWAY_INTERNAL: string =
   "https://chromadin.xyz/api/infura/";
 export const GROVE_GATEWAY: string = "https://api.grove.storage/";
+export const DEFAULT_UPLOAD_DATE: string = "2024-01-01T00:00:00Z";
 
 export const ARTE: { alt: string; src: string }[] = [
   {

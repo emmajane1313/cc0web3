@@ -5,6 +5,9 @@ import Auto from "../components/Common/modules/Auto";
 export const metadata: Metadata = {
   title: "Privacy & Autonomy - CC0 Web3 by Emma-Jane MacKinnon-Lee",
   description: "For the mailing list moderators.",
+  alternates: {
+    canonical: "/privacy-and-autonomy/",
+  },
   keywords: ["Emma-Jane MacKinnon-Lee", "Privacy", "Autonomy", "Web3", "Decentralization"],
   authors: [{ name: "Emma-Jane MacKinnon-Lee" }],
   twitter: {

@@ -1,9 +1,13 @@
 import { Metadata } from "next";
 import Wrapper from "../components/Common/modules/Wrapper";
+import { DEFAULT_UPLOAD_DATE } from "../lib/constantes";
 
 export const metadata: Metadata = {
   title: "Rugpulls - CC0 Web3 by Emma-Jane MacKinnon-Lee",
   description: "For the mailing list moderators.",
+  alternates: {
+    canonical: "/rugpulls/",
+  },
   keywords: ["Emma-Jane MacKinnon-Lee", "Rugpulls", "Web3 Scams", "Crypto"],
   authors: [{ name: "Emma-Jane MacKinnon-Lee" }],
   twitter: {
@@ -25,6 +29,7 @@ export default function Rugpulls() {
     description: "Loop video for the Rugpulls page by Emma-Jane MacKinnon-Lee.",
     thumbnailUrl: "https://cc0web3.com/images/rugpulls.png",
     contentUrl: "https://cc0web3.com/videos/rugpulls.mp4",
+    uploadDate: DEFAULT_UPLOAD_DATE,
     creator: {
       "@type": "Person",
       name: "Emma-Jane MacKinnon-Lee",
