@@ -1,8 +1,22 @@
 import { NextResponse } from "next/server";
 import { AFIS, DEFAULT_UPLOAD_DATE, TRANSMIT, VIDEOS } from "../lib/constantes";
 
+type MediaWithAssets = {
+  video: string;
+  imagen: string;
+  titulo: string;
+  contenido?: string;
+};
+
 const toAbsolute = (baseUrl: string, url: string) =>
   url.startsWith("/") ? `${baseUrl}${url}` : url;
+
+const hasVideoAssets = (video: {
+  video?: string;
+  imagen?: string;
+  titulo: string;
+  contenido?: string;
+}): video is MediaWithAssets => Boolean(video.video && video.imagen);
 const withTrailingSlash = (url: string) => (url.endsWith("/") ? url : `${url}/`);
 
 export async function GET() {
@@ -20,13 +34,15 @@ export async function GET() {
   }[] = [
     {
       loc: withTrailingSlash(`${baseUrl}/`),
-      videos: AFIS.map((video) => ({
-        title: video.titulo,
-        description: "Loop video from CC0 Web3 by Emma-Jane MacKinnon-Lee.",
-        thumbnail: toAbsolute(baseUrl, video.imagen),
-        content: toAbsolute(baseUrl, video.video),
-        uploadDate: DEFAULT_UPLOAD_DATE,
-      })),
+      videos: AFIS.filter(hasVideoAssets).map(
+        (video) => ({
+          title: video.titulo,
+          description: "Loop video from CC0 Web3 by Emma-Jane MacKinnon-Lee.",
+          thumbnail: toAbsolute(baseUrl, video.imagen),
+          content: toAbsolute(baseUrl, video.video),
+          uploadDate: DEFAULT_UPLOAD_DATE,
+        })
+      ),
     },
     {
       loc: withTrailingSlash(`${baseUrl}/noticias`),
@@ -66,24 +82,28 @@ export async function GET() {
     },
     {
       loc: withTrailingSlash(`${baseUrl}/video`),
-      videos: VIDEOS.map((video) => ({
-        title: video.titulo,
-        description:
-          video.contenido || "CC0 Web3 video by Emma-Jane MacKinnon-Lee.",
-        thumbnail: toAbsolute(baseUrl, video.imagen),
-        content: toAbsolute(baseUrl, video.video),
-        uploadDate: DEFAULT_UPLOAD_DATE,
-      })),
+      videos: VIDEOS.filter(hasVideoAssets).map(
+        (video) => ({
+          title: video.titulo,
+          description:
+            video.contenido || "CC0 Web3 video by Emma-Jane MacKinnon-Lee.",
+          thumbnail: toAbsolute(baseUrl, video.imagen),
+          content: toAbsolute(baseUrl, video.video),
+          uploadDate: DEFAULT_UPLOAD_DATE,
+        })
+      ),
     },
     {
       loc: withTrailingSlash(`${baseUrl}/transmissions`),
-      videos: TRANSMIT.map((video) => ({
-        title: video.titulo,
-        description: "CC0 Web3 transmission by Emma-Jane MacKinnon-Lee.",
-        thumbnail: toAbsolute(baseUrl, video.imagen),
-        content: toAbsolute(baseUrl, video.video),
-        uploadDate: DEFAULT_UPLOAD_DATE,
-      })),
+      videos: TRANSMIT.filter(hasVideoAssets).map(
+        (video) => ({
+          title: video.titulo,
+          description: "CC0 Web3 transmission by Emma-Jane MacKinnon-Lee.",
+          thumbnail: toAbsolute(baseUrl, video.imagen),
+          content: toAbsolute(baseUrl, video.video),
+          uploadDate: DEFAULT_UPLOAD_DATE,
+        })
+      ),
     },
   ];
 
