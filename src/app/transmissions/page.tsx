@@ -34,7 +34,9 @@ export default function Transmissions() {
       description: "CC0 Web3 transmission by Emma-Jane MacKinnon-Lee.",
       thumbnailUrl: video.imagen,
       contentUrl: video.video,
+      embedUrl: "https://cc0web3.com/transmissions/",
       uploadDate: DEFAULT_UPLOAD_DATE,
+      duration: "PT2M",
       creator: {
         "@type": "Person",
         name: "Emma-Jane MacKinnon-Lee",

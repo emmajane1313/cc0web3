@@ -42,7 +42,9 @@ export default function Page() {
       description: "Loop video from CC0 Web3 by Emma-Jane MacKinnon-Lee.",
       thumbnailUrl: `https://cc0web3.com${video.imagen}`,
       contentUrl: `https://cc0web3.com${video.video}`,
+      embedUrl: `https://cc0web3.com/`,
       uploadDate: DEFAULT_UPLOAD_DATE,
+      duration: "PT30S",
       creator: {
         "@type": "Person",
         name: "Emma-Jane MacKinnon-Lee",

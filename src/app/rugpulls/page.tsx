@@ -29,7 +29,9 @@ export default function Rugpulls() {
     description: "Loop video for the Rugpulls page by Emma-Jane MacKinnon-Lee.",
     thumbnailUrl: "https://cc0web3.com/images/rugpulls.png",
     contentUrl: "https://cc0web3.com/videos/rugpulls.mp4",
+    embedUrl: "https://cc0web3.com/rugpulls/",
     uploadDate: DEFAULT_UPLOAD_DATE,
+    duration: "PT30S",
     creator: {
       "@type": "Person",
       name: "Emma-Jane MacKinnon-Lee",

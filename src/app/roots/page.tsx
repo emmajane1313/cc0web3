@@ -30,7 +30,9 @@ export default function Roots() {
     description: "Loop video for the Roots page by Emma-Jane MacKinnon-Lee.",
     thumbnailUrl: "https://cc0web3.com/images/chica.png",
     contentUrl: "https://cc0web3.com/videos/chica.mp4",
+    embedUrl: "https://cc0web3.com/roots/",
     uploadDate: DEFAULT_UPLOAD_DATE,
+    duration: "PT30S",
     creator: {
       "@type": "Person",
       name: "Emma-Jane MacKinnon-Lee",

@@ -29,7 +29,9 @@ export default function Noticias() {
     description: "Loop video for the Noticias page by Emma-Jane MacKinnon-Lee.",
     thumbnailUrl: "https://cc0web3.com/images/compman.png",
     contentUrl: "https://cc0web3.com/videos/compman.mp4",
+    embedUrl: "https://cc0web3.com/noticias/",
     uploadDate: DEFAULT_UPLOAD_DATE,
+    duration: "PT30S",
     creator: {
       "@type": "Person",
       name: "Emma-Jane MacKinnon-Lee",
