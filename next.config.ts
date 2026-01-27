@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  telemetry: false,
   reactStrictMode: false,
   experimental: {
     scrollRestoration: true,
@@ -8,6 +9,10 @@ const nextConfig: NextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  productionBrowserSourceMaps: false,
+  compiler: {
+    removeConsole: false,
   },
   images: {
     remotePatterns: [

@@ -27,15 +27,19 @@ const useTransmit = () => {
   };
 
   useEffect(() => {
-    const video = vid?.current;
-    if (!video) return;
+    setCurrentTime(0);
+  }, [video]);
 
-    const updateTime = () => setCurrentTime(video.currentTime);
+  useEffect(() => {
+    const videoElement = vid?.current;
+    if (!videoElement) return;
 
-    video.addEventListener("timeupdate", updateTime);
+    const updateTime = () => setCurrentTime(videoElement.currentTime);
+
+    videoElement.addEventListener("timeupdate", updateTime);
 
     return () => {
-      video.removeEventListener("timeupdate", updateTime);
+      videoElement.removeEventListener("timeupdate", updateTime);
     };
   }, [vid, video]);
 

@@ -40,6 +40,10 @@ export async function GET() {
             title: "Rugpulls",
             src: "/images/rugpulls.png",
           },
+          {
+            title: "Alfombras Largas",
+            src: "/images/alfombras.png",
+          },
         ],
         "/roots": [
           {
@@ -57,6 +61,12 @@ export async function GET() {
           {
             title: "Ilya Zhitomirskiy",
             src: "/images/ilya.png",
+          },
+        ],
+        "/privacy-and-autonomy": [
+          {
+            title: "Roman Matroids",
+            src: "https://chromadin.infura-ipfs.io/ipfs/QmbDFF5XGfa4mimHoRjkSM67YM6EBFLxZw2PimxSQQ1gdF",
           },
         ],
       };

@@ -53,7 +53,7 @@ function Reality() {
         <br />
         Plain and to the point enough. In it, it gets stuck quick, drawing
         attention to the profound cost of losing so many classical hackers to
-        suicide. It echoes Drew Len's story, a luminary in cryptography and by
+        suicide. It echoes through Len's story, a luminary in cryptography and by
         extension, the cryptocurrencies and decentralized networks. It contrasts
         the fateful life of Len, etched into the Bitcoin blockchain as a tribute
         with the disappearance of Satoshi Nakamoto. Around the same time, Glenn,

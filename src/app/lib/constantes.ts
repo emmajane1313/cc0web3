@@ -152,7 +152,7 @@ export const TRANSMIT: Media[] = [
     imagen:
       "https://chromadin.xyz/api/infura/QmTvBiJLh1QtFLU9UJRq1nKDgQgvCvktauCZC6k6hMhGXA",
   },
-   {
+  {
     titulo: "Litvision",
 
     video:
@@ -201,3 +201,9 @@ export const TRANSMIT: Media[] = [
       "https://chromadin.xyz/api/infura/Qmb2M48ZEZKgCjwebnp13Heojyi59aa71Hc9ZWG9o9BXWr",
   },
 ];
+
+export const MATROID_VID: { titulo: string; portada: string; video: string } = {
+  titulo: "Roman Matroids",
+  portada: "QmbDFF5XGfa4mimHoRjkSM67YM6EBFLxZw2PimxSQQ1gdF",
+  video: "QmYF56PqmExGSLntWrbjHWyt6rVsjCjLGiGoUiXXc2Pk3U",
+};

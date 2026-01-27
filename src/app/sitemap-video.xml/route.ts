@@ -66,6 +66,13 @@ export async function GET() {
           content: `${baseUrl}/videos/rugpulls.mp4`,
           uploadDate: DEFAULT_UPLOAD_DATE,
         },
+        {
+          title: "Alfombras Largas video",
+          description: "Alfombras Largas loop video by Emma-Jane MacKinnon-Lee.",
+          thumbnail: `${baseUrl}/images/alfombras.png`,
+          content: `${baseUrl}/videos/alfombras.mp4`,
+          uploadDate: DEFAULT_UPLOAD_DATE,
+        },
       ],
     },
     {
@@ -104,6 +111,18 @@ export async function GET() {
           uploadDate: DEFAULT_UPLOAD_DATE,
         })
       ),
+    },
+    {
+      loc: withTrailingSlash(`${baseUrl}/privacy-and-autonomy`),
+      videos: [
+        {
+          title: "Roman Matroids video",
+          description: "Roman Matroids video by Emma-Jane MacKinnon-Lee.",
+          thumbnail: `https://chromadin.infura-ipfs.io/ipfs/QmbDFF5XGfa4mimHoRjkSM67YM6EBFLxZw2PimxSQQ1gdF`,
+          content: `https://chromadin.infura-ipfs.io/ipfs/QmYF56PqmExGSLntWrbjHWyt6rVsjCjLGiGoUiXXc2Pk3U`,
+          uploadDate: DEFAULT_UPLOAD_DATE,
+        },
+      ],
     },
   ];
 
