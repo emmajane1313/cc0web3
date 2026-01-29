@@ -207,3 +207,9 @@ export const MATROID_VID: { titulo: string; portada: string; video: string } = {
   portada: "QmbDFF5XGfa4mimHoRjkSM67YM6EBFLxZw2PimxSQQ1gdF",
   video: "QmYF56PqmExGSLntWrbjHWyt6rVsjCjLGiGoUiXXc2Pk3U",
 };
+
+export const WALKAWAY_VID: { titulo: string; portada: string; video: string } = {
+  titulo: "أمشي وأسيب الموضوع",
+  portada: "QmZLbjgsHQU59Yfzp7RzBiFmAY8sEg3xTmL35wHGakaErw",
+  video: "QmS2dvpKvQQ372qDBEgxUWdTbQKvENf6sghXy8bkBmQYt1",
+};

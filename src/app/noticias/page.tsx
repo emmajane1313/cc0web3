@@ -50,11 +50,11 @@ export default function Noticias() {
         <div className="my-4 bg-red-900 text-center items-center justify-center w-full text-yellow-300 text-lg font-bold">
           «« Real-Time Autonomous Visual Layers »»
         </div>
-        <div className="flex relative w-full h-fit">
+        <div className="flex relative justify-center items-center w-full h-fit sm:flex-row flex-col">
           <video
             draggable={false}
             poster={"/images/compman.png"}
-            className="object-contain flex relative w-full h-40"
+            className="object-contain flex relative h-40"
             autoPlay
             loop
             muted
@@ -62,6 +62,18 @@ export default function Noticias() {
             aria-label="Noticias loop video"
           >
             <source src={"/videos/compman.mp4"} />
+          </video>
+          <video
+            draggable={false}
+            poster={"/images/chica.png"}
+            className="object-contain flex relative h-40"
+            autoPlay
+            loop
+            muted
+            title="Roots loop video"
+            aria-label="Roots loop video"
+          >
+            <source src={"/videos/chica.mp4"} />
           </video>
         </div>
         <div className="relative w-full h-fit flex text-yellow-200 text-center text-sm justify-center items-center">

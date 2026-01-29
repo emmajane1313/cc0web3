@@ -9,7 +9,7 @@ import {
 } from "react";
 import { ModalContext } from "@/app/providers";
 
-const useControls = (matroidVid?: RefObject<HTMLVideoElement | null>) => {
+const useControls = (otherVid?: RefObject<HTMLVideoElement | null>) => {
   const context = useContext(ModalContext);
   const progressRef = useRef<HTMLDivElement>(null);
 
@@ -23,17 +23,17 @@ const useControls = (matroidVid?: RefObject<HTMLVideoElement | null>) => {
     const progressRect = e.currentTarget.getBoundingClientRect();
     const seekPosition = (e.clientX - progressRect.left) / progressRect.width;
 
-    if (matroidVid?.current) {
-      matroidVid.current.currentTime =
-        seekPosition * matroidVid.current.duration;
+    if (otherVid?.current) {
+      otherVid.current.currentTime =
+        seekPosition * otherVid.current.duration;
     } else if (context?.vid.current)
       context.vid.current.currentTime =
         seekPosition * context.vid.current.duration;
   };
 
   const handleVolumeChange = (e: FormEvent) => {
-    if (matroidVid?.current) {
-      matroidVid.current.volume = (e.target as HTMLFormElement).value;
+    if (otherVid?.current) {
+      otherVid.current.volume = (e.target as HTMLFormElement).value;
     } else if (context?.vid.current)
       context.vid.current.volume = (e.target as HTMLFormElement).value;
     setVolume(parseFloat((e.target as HTMLFormElement).value));
@@ -44,7 +44,7 @@ const useControls = (matroidVid?: RefObject<HTMLVideoElement | null>) => {
   }, [context?.video]);
 
   useEffect(() => {
-    const video = matroidVid ? matroidVid?.current : context?.vid?.current;
+    const video = otherVid ? otherVid?.current : context?.vid?.current;
     if (!video) return;
 
     const updateTime = () => setCurrentTime(video.currentTime);
@@ -54,7 +54,7 @@ const useControls = (matroidVid?: RefObject<HTMLVideoElement | null>) => {
     return () => {
       video.removeEventListener("timeupdate", updateTime);
     };
-  }, [context?.vid, context?.video, matroidVid]);
+  }, [context?.vid, context?.video, otherVid]);
 
   return {
     handleSeek,
