@@ -69,6 +69,12 @@ export async function GET() {
             src: "https://chromadin.infura-ipfs.io/ipfs/QmbDFF5XGfa4mimHoRjkSM67YM6EBFLxZw2PimxSQQ1gdF",
           },
         ],
+        "/myth-vs-reality": [
+          {
+            title: "Where Did All the Cypherpunks Go - Myth Vs Reality",
+            src: "https://gw.ipfs-lens.dev/ipfs/bafybeibfjkzskjddb2qfvzsmiohoc2mk7ti6ti5g7dtfmxj4jlmtwwkdbm",
+          },
+        ],
       };
 
       const routePath = route.path || "/";
