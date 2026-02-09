@@ -205,7 +205,7 @@ export const TRANSMIT: Media[] = [
 export const MATROID_VID: { titulo: string; portada: string; video: string } = {
   titulo: "Roman Matroids",
   portada: "QmbDFF5XGfa4mimHoRjkSM67YM6EBFLxZw2PimxSQQ1gdF",
-  video: "QmYF56PqmExGSLntWrbjHWyt6rVsjCjLGiGoUiXXc2Pk3U",
+  video: "QmasFWHaJnQ9xpyNRBQWUJ1xMd4eTuoepMTGJcdzR7SkS3",
 };
 
 export const WALKAWAY_VID: { titulo: string; portada: string; video: string } = {
