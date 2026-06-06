@@ -7,11 +7,18 @@ import {
 } from "@/app/lib/constantes";
 import formatTime from "@/app/lib/helpers/formatTime";
 import Image from "next/image";
-import { FormEvent, useRef } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import useVideo from "../hooks/useVideo";
 import useControls from "../../Videos/hooks/useControls";
 
+const AUTO_LANGUAGE_KEY = "matroid_video_language";
+
 function Auto() {
+  const [idioma, setIdioma] = useState<"ar" | "en">(() => {
+    if (typeof window === "undefined") return "en";
+    const saved = localStorage.getItem(AUTO_LANGUAGE_KEY);
+    return saved === "ar" || saved === "en" ? saved : "en";
+  });
   const matroidVid = useRef<HTMLVideoElement>(null);
   const {
     handleSeek,
@@ -21,25 +28,41 @@ function Auto() {
     volumeOpen,
     progressRef,
     currentTime,
-  } = useControls(matroidVid);
-  const { handlePlay, play } = useVideo(matroidVid);
+  } = useControls(matroidVid, idioma);
+  const { handlePlay, play } = useVideo(matroidVid, `matroid_vid_${idioma}`);
+
+  useEffect(() => {
+    localStorage.setItem(AUTO_LANGUAGE_KEY, idioma);
+  }, [idioma]);
+
+  const progressPercentage =
+    matroidVid?.current?.duration && matroidVid.current.duration > 0
+      ? ((currentTime || 0) / matroidVid.current.duration) * 100
+      : 0;
   return (
     <div className="relative w-full h-fit flex text-yellow-200 text-center text-sm justify-center items-center lg:order-2 order-1">
       <div className="relative w-5/6 flex h-fit flex-col gap-3  items-center justify-center">
-        <div className="relative w-full text-left h-fit text-yellow-400 font-wood">
-          {MATROID_VID?.titulo}
+        <div className="relative w-full h-fit text-yellow-400 font-wood flex items-center justify-between gap-2">
+          <span className="text-left">{MATROID_VID[idioma]?.titulo}</span>
+          <button
+            type="button"
+            className="border border-yellow-400 px-2 py-1 cursor-pointer text-[10px] md:text-xs uppercase tracking-wider hover:bg-yellow-400/20"
+            onClick={() => setIdioma((prev) => (prev === "en" ? "ar" : "en"))}
+          >
+            {idioma === "en" ? "AR" : "EN"}
+          </button>
         </div>
         <div className="relative w-full items-center justify-center h-full flex">
           <video
-            key={MATROID_VID?.titulo}
+            key={MATROID_VID[idioma]?.titulo}
             ref={matroidVid}
             className="relative border border-yellow-400 flex object-cover w-full h-[20rem] md:h-[30rem]"
             draggable={false}
-            poster={`${INFURA_GATEWAY}/ipfs/${MATROID_VID.portada}`}
-            title={MATROID_VID.titulo}
-            aria-label={MATROID_VID.titulo}
+            poster={`${INFURA_GATEWAY}/ipfs/${MATROID_VID[idioma].portada}`}
+            title={MATROID_VID[idioma].titulo}
+            aria-label={MATROID_VID[idioma].titulo}
           >
-            <source src={`${INFURA_GATEWAY}/ipfs/${MATROID_VID.video}`} />
+            <source src={`${INFURA_GATEWAY}/ipfs/${MATROID_VID[idioma].video}`} />
           </video>
         </div>
         <div className="relative w-full h-fit flex flex-row gap-2 items-center justify-between">
@@ -74,10 +97,7 @@ function Auto() {
             <div
               className="absolute h-full bg-red-700/70"
               style={{
-                width: `${
-                  ((currentTime || 0) / (matroidVid?.current?.duration || 0)) *
-                  100
-                }%`,
+                width: `${progressPercentage}%`,
               }}
             />
           </div>

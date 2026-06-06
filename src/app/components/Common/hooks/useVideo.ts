@@ -1,7 +1,10 @@
 import { RefObject, useContext, useEffect, useState } from "react";
 import { ModalContext } from "@/app/providers";
 
-const useVideo = (matroidVid?: RefObject<HTMLVideoElement | null>) => {
+const useVideo = (
+  matroidVid?: RefObject<HTMLVideoElement | null>,
+  storageKey?: string,
+) => {
   const contexto = useContext(ModalContext);
   const [play, setPlay] = useState<boolean>(false);
 
@@ -24,13 +27,12 @@ const useVideo = (matroidVid?: RefObject<HTMLVideoElement | null>) => {
 
   useEffect(() => {
     const video = (matroidVid ? matroidVid : contexto?.vid)?.current;
-    const current = matroidVid ? matroidVid : contexto?.video?.titulo;
+    const current = storageKey || contexto?.video?.titulo;
 
     if (!video || !current) return;
 
-    const time = parseFloat(
-      localStorage.getItem("timestamp_" + current) || "0",
-    );
+    const timestampKey = "timestamp_" + current;
+    const time = parseFloat(localStorage.getItem(timestampKey) || "0");
 
     const restoreTime = async () => {
       if (!isNaN(time) && time > 0) {
@@ -44,7 +46,7 @@ const useVideo = (matroidVid?: RefObject<HTMLVideoElement | null>) => {
     video.addEventListener("loadedmetadata", restoreTime);
 
     const saveTime = () => {
-      localStorage.setItem("timestamp_" + current, String(video.currentTime));
+      localStorage.setItem(timestampKey, String(video.currentTime));
     };
     video.addEventListener("timeupdate", saveTime);
 
@@ -52,7 +54,7 @@ const useVideo = (matroidVid?: RefObject<HTMLVideoElement | null>) => {
       video.removeEventListener("loadedmetadata", restoreTime);
       video.removeEventListener("timeupdate", saveTime);
     };
-  }, [contexto?.vid, contexto?.video?.titulo, matroidVid]);
+  }, [contexto?.vid, contexto?.video?.titulo, matroidVid, storageKey]);
 
   return {
     handlePlay,

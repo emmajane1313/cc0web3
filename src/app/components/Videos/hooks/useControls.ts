@@ -9,7 +9,10 @@ import {
 } from "react";
 import { ModalContext } from "@/app/providers";
 
-const useControls = (otherVid?: RefObject<HTMLVideoElement | null>) => {
+const useControls = (
+  otherVid?: RefObject<HTMLVideoElement | null>,
+  syncKey?: string,
+) => {
   const context = useContext(ModalContext);
   const progressRef = useRef<HTMLDivElement>(null);
 
@@ -24,8 +27,7 @@ const useControls = (otherVid?: RefObject<HTMLVideoElement | null>) => {
     const seekPosition = (e.clientX - progressRect.left) / progressRect.width;
 
     if (otherVid?.current) {
-      otherVid.current.currentTime =
-        seekPosition * otherVid.current.duration;
+      otherVid.current.currentTime = seekPosition * otherVid.current.duration;
     } else if (context?.vid.current)
       context.vid.current.currentTime =
         seekPosition * context.vid.current.duration;
@@ -41,7 +43,7 @@ const useControls = (otherVid?: RefObject<HTMLVideoElement | null>) => {
 
   useEffect(() => {
     setCurrentTime(0);
-  }, [context?.video]);
+  }, [context?.video, syncKey]);
 
   useEffect(() => {
     const video = otherVid ? otherVid?.current : context?.vid?.current;
@@ -54,7 +56,7 @@ const useControls = (otherVid?: RefObject<HTMLVideoElement | null>) => {
     return () => {
       video.removeEventListener("timeupdate", updateTime);
     };
-  }, [context?.vid, context?.video, otherVid]);
+  }, [context?.vid, context?.video, otherVid, syncKey]);
 
   return {
     handleSeek,

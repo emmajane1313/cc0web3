@@ -200,16 +200,37 @@ export const TRANSMIT: Media[] = [
     imagen:
       "https://chromadin.xyz/api/infura/Qmb2M48ZEZKgCjwebnp13Heojyi59aa71Hc9ZWG9o9BXWr",
   },
+    {
+    titulo: "السيڤربانكس راحوا فين كلهم؟",
+
+    video:
+      "https://chromadin.xyz/api/infura/QmSfvjW9YqgHRjjjAb7CYZN7SukxzckKoTJCtCacY8tNK9",
+    imagen:
+      "https://chromadin.xyz/api/infura/QmenggnmziozxNAazvbPH7Dafh2MxT87DqXiYiykRgDJm2",
+  },
 ];
 
-export const MATROID_VID: { titulo: string; portada: string; video: string } = {
-  titulo: "Roman Matroids",
-  portada: "QmbDFF5XGfa4mimHoRjkSM67YM6EBFLxZw2PimxSQQ1gdF",
-  video: "QmasFWHaJnQ9xpyNRBQWUJ1xMd4eTuoepMTGJcdzR7SkS3",
+export type SiteLanguage = "ar" | "en";
+
+export const MATROID_VID: Record<
+  SiteLanguage,
+  { titulo: string; portada: string; video: string }
+> = {
+  ar: {
+    titulo: "ماترويدات رومانية",
+    portada: "QmbDFF5XGfa4mimHoRjkSM67YM6EBFLxZw2PimxSQQ1gdF",
+    video: "QmTzusqZQzgC6TezFE2QwmGBJe8ZQ3DfD1W47nca6TpPVL",
+  },
+  en: {
+    titulo: "Roman Matroids",
+    portada: "QmbDFF5XGfa4mimHoRjkSM67YM6EBFLxZw2PimxSQQ1gdF",
+    video: "QmasFWHaJnQ9xpyNRBQWUJ1xMd4eTuoepMTGJcdzR7SkS3",
+  },
 };
 
-export const WALKAWAY_VID: { titulo: string; portada: string; video: string } = {
-  titulo: "أمشي وأسيب الموضوع",
-  portada: "QmZLbjgsHQU59Yfzp7RzBiFmAY8sEg3xTmL35wHGakaErw",
-  video: "QmS2dvpKvQQ372qDBEgxUWdTbQKvENf6sghXy8bkBmQYt1",
-};
+export const WALKAWAY_VID: { titulo: string; portada: string; video: string } =
+  {
+    titulo: "أمشي وأسيب الموضوع",
+    portada: "QmZLbjgsHQU59Yfzp7RzBiFmAY8sEg3xTmL35wHGakaErw",
+    video: "QmS2dvpKvQQ372qDBEgxUWdTbQKvENf6sghXy8bkBmQYt1",
+  };
