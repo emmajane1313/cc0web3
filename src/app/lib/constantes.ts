@@ -1,8 +1,8 @@
 import { Media } from "../components/Common/types/common.types";
 
-export const INFURA_GATEWAY: string = "https://chromadin.infura-ipfs.io";
+export const INFURA_GATEWAY: string = "https://cdn.digitalax.xyz";
 export const INFURA_GATEWAY_INTERNAL: string =
-  "https://chromadin.xyz/api/infura/";
+  "https://cdn.digitalax.xyz/ipfs/";
 export const GROVE_GATEWAY: string = "https://api.grove.storage/";
 export const DEFAULT_UPLOAD_DATE: string = "2024-01-01T00:00:00Z";
 
@@ -67,7 +67,7 @@ export const VIDEOS: Media[] = [
     video:
       "https://gw.ipfs-lens.dev/ipfs/bafybeibfjkzskjddb2qfvzsmiohoc2mk7ti6ti5g7dtfmxj4jlmtwwkdbm",
     imagen:
-      "https://chromadin.xyz/api/infura/QmenggnmziozxNAazvbPH7Dafh2MxT87DqXiYiykRgDJm2",
+      "https://cdn.digitalax.xyz/ipfs/QmenggnmziozxNAazvbPH7Dafh2MxT87DqXiYiykRgDJm2",
   },
   {
     titulo: "Alice & Bob Labyrinth Edition",
@@ -88,7 +88,7 @@ export const VIDEOS: Media[] = [
     video:
       "https://gw.ipfs-lens.dev/ipfs/bafybeih5yf5qbd5d5s3fudhjeovyyzymbuqg4uoyv4o2fskm6bkk6bbp44",
     imagen:
-      "https://chromadin.xyz/api/infura/QmazTWbRvoKgTPMYhGQTXpzUuUWQLVsVApfvBKLz8LDnPa",
+      "https://cdn.digitalax.xyz/ipfs/QmazTWbRvoKgTPMYhGQTXpzUuUWQLVsVApfvBKLz8LDnPa",
   },
 
   {
@@ -98,7 +98,7 @@ export const VIDEOS: Media[] = [
     contenido:
       "Your memories, your moments, your connections— they're all tied up in the apps you use. But the secret that keeps you locked in place is fear of starting all over again. You're a hostage to history, but maybe it's not too late to break free.",
     imagen:
-      "https://chromadin.xyz/api/infura/QmWMeVWidKkZ3xHD3KDvmedeqt1Dq3SxZQQWSCmXFabPEi",
+      "https://cdn.digitalax.xyz/ipfs/QmWMeVWidKkZ3xHD3KDvmedeqt1Dq3SxZQQWSCmXFabPEi",
     video:
       "https://gw.ipfs-lens.dev/ipfs/bafybeignl3tjklcp46jgtf3sug6zennfigimj7khmqq2jz2f6p76mpgwve",
   },
@@ -109,7 +109,7 @@ export const VIDEOS: Media[] = [
     video:
       "https://gw.ipfs-lens.dev/ipfs/QmSU8DJhzFDS9NvdvdNLggHTSKDt6AvSg2cDgwaC93nzi8",
     imagen:
-      "https://chromadin.xyz/api/infura/QmcwmAjAvqZ8fht5z4UJMmT6UNrN7j3cYzs9ze7bMjUdpC",
+      "https://cdn.digitalax.xyz/ipfs/QmcwmAjAvqZ8fht5z4UJMmT6UNrN7j3cYzs9ze7bMjUdpC",
     enlace:
       "https://chromadin.xyz/?video=60471358498348403947242592947147264813035763261880566868121712257499536251057",
   },
@@ -150,7 +150,7 @@ export const TRANSMIT: Media[] = [
     video:
       "https://gw.ipfs-lens.dev/ipfs/bafybeicnjmqfthykfpkuxyeat66ayb3jpxutbugpnas5vxuif42q3illdq",
     imagen:
-      "https://chromadin.xyz/api/infura/QmTvBiJLh1QtFLU9UJRq1nKDgQgvCvktauCZC6k6hMhGXA",
+      "https://cdn.digitalax.xyz/ipfs/QmTvBiJLh1QtFLU9UJRq1nKDgQgvCvktauCZC6k6hMhGXA",
   },
   {
     titulo: "Litvision",
@@ -158,7 +158,7 @@ export const TRANSMIT: Media[] = [
     video:
       "https://gw.ipfs-lens.dev/ipfs/bafybeifd3sv4tc6y6dqjjrsbvbx5zylfm3gyayhn4otb3vlc6mrweguqna",
     imagen:
-      "https://chromadin.xyz/api/infura/QmekBD7Xz1GRrFKGm4KWVLxme1W3QTnGqNdY2VJjM18hmb",
+      "https://cdn.digitalax.xyz/ipfs/QmekBD7Xz1GRrFKGm4KWVLxme1W3QTnGqNdY2VJjM18hmb",
   },
   {
     titulo: "In The Street It’s Just Available",
@@ -166,7 +166,7 @@ export const TRANSMIT: Media[] = [
     video:
       "https://gw.ipfs-lens.dev/ipfs/bafybeify4i2avce2wbzmsjlnrf24jceqicsn3ksewflwuvatozpxlquyoa",
     imagen:
-      "https://chromadin.xyz/api/infura/QmYpZAjT3J7NypHEDrQbC9w1Xe3GFHXJvZfs9JHQLH7Fce",
+      "https://cdn.digitalax.xyz/ipfs/QmYpZAjT3J7NypHEDrQbC9w1Xe3GFHXJvZfs9JHQLH7Fce",
   },
   {
     titulo: "A Break from the Circuit",
@@ -174,7 +174,7 @@ export const TRANSMIT: Media[] = [
     video:
       "https://gw.ipfs-lens.dev/ipfs/bafybeieudmatkn44mxm5q4ns33oefyzxxcbobwsky3yqan5myftjydnjje",
     imagen:
-      "https://chromadin.xyz/api/infura/QmZGdVS5RBDDNUJ7xJmiarVuXFsMd5wB9YYGHpAY9U3bnf",
+      "https://cdn.digitalax.xyz/ipfs/QmZGdVS5RBDDNUJ7xJmiarVuXFsMd5wB9YYGHpAY9U3bnf",
   },
   {
     titulo: "When video is king",
@@ -182,7 +182,7 @@ export const TRANSMIT: Media[] = [
     video:
       "https://gw.ipfs-lens.dev/ipfs/bafybeiaujptbc5t3elsak7fixzy5glq3ijqoug7zjyaa5gcnvo2uhr3yae",
     imagen:
-      "https://chromadin.xyz/api/infura/Qmere72oocLsuqvJEH8bXXaJkmRtin9x2yeU7YC5td634E",
+      "https://cdn.digitalax.xyz/ipfs/Qmere72oocLsuqvJEH8bXXaJkmRtin9x2yeU7YC5td634E",
   },
   {
     titulo: "Spells Duty",
@@ -190,7 +190,7 @@ export const TRANSMIT: Media[] = [
     video:
       "https://gw.ipfs-lens.dev/ipfs/bafybeib7yq4pinvoezmqgkjoykyw57ejehfmsvqrkel4bioibih74nveiq",
     imagen:
-      "https://chromadin.xyz/api/infura/Qmcxv5AN2TrpoYFk1rr81Z3Mh2eCD97Xnj5ejSL71DK7k5",
+      "https://cdn.digitalax.xyz/ipfs/Qmcxv5AN2TrpoYFk1rr81Z3Mh2eCD97Xnj5ejSL71DK7k5",
   },
   {
     titulo: "No Mr. Khrushchev",
@@ -198,15 +198,15 @@ export const TRANSMIT: Media[] = [
     video:
       "https://gw.ipfs-lens.dev/ipfs/bafybeig2l6i2zbherfhauhlvgkhplnpfuoaojaqqoxxot5imvlpl6jqxyq",
     imagen:
-      "https://chromadin.xyz/api/infura/Qmb2M48ZEZKgCjwebnp13Heojyi59aa71Hc9ZWG9o9BXWr",
+      "https://cdn.digitalax.xyz/ipfs/Qmb2M48ZEZKgCjwebnp13Heojyi59aa71Hc9ZWG9o9BXWr",
   },
     {
     titulo: "السيڤربانكس راحوا فين كلهم؟",
 
     video:
-      "https://chromadin.xyz/api/infura/QmSfvjW9YqgHRjjjAb7CYZN7SukxzckKoTJCtCacY8tNK9",
+      "https://cdn.digitalax.xyz/ipfs/QmSfvjW9YqgHRjjjAb7CYZN7SukxzckKoTJCtCacY8tNK9",
     imagen:
-      "https://chromadin.xyz/api/infura/QmenggnmziozxNAazvbPH7Dafh2MxT87DqXiYiykRgDJm2",
+      "https://cdn.digitalax.xyz/ipfs/QmenggnmziozxNAazvbPH7Dafh2MxT87DqXiYiykRgDJm2",
   },
 ];
 

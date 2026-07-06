@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  telemetry: false,
   reactStrictMode: false,
   experimental: {
     scrollRestoration: true,
@@ -18,7 +17,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "chromadin.infura-ipfs.io",
+        hostname: "cdn.digitalax.xyz",
         pathname: "/ipfs/**",
       },
       {
@@ -28,8 +27,8 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "chromadin.xyz",
-        pathname: "/api/infura/**",
+        hostname: "cdn.digitalax.xyz",
+        pathname: "/ipfs/**",
       },
     ],
     unoptimized: true,
@@ -39,7 +38,7 @@ const nextConfig: NextConfig = {
     let headersConfig: any = [];
 
     const allowedOrigins = [
-      "https://chromadin.infura-ipfs.io",
+      "https://cdn.digitalax.xyz",
       "https://ik.imagekit.io",
       "https://chromadin.xyz",
     ];

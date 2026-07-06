@@ -66,7 +66,7 @@ export async function GET() {
         "/privacy-and-autonomy": [
           {
             title: "Roman Matroids",
-            src: "https://chromadin.infura-ipfs.io/ipfs/QmbDFF5XGfa4mimHoRjkSM67YM6EBFLxZw2PimxSQQ1gdF",
+            src: "https://cdn.digitalax.xyz/ipfs/QmbDFF5XGfa4mimHoRjkSM67YM6EBFLxZw2PimxSQQ1gdF",
           },
         ],
         "/myth-vs-reality": [

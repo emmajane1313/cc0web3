@@ -118,8 +118,8 @@ export async function GET() {
         {
           title: "Roman Matroids video",
           description: "Roman Matroids video by Emma-Jane MacKinnon-Lee.",
-          thumbnail: `https://chromadin.infura-ipfs.io/ipfs/QmbDFF5XGfa4mimHoRjkSM67YM6EBFLxZw2PimxSQQ1gdF`,
-          content: `https://chromadin.infura-ipfs.io/ipfs/QmYF56PqmExGSLntWrbjHWyt6rVsjCjLGiGoUiXXc2Pk3U`,
+          thumbnail: `https://cdn.digitalax.xyz/ipfs/QmbDFF5XGfa4mimHoRjkSM67YM6EBFLxZw2PimxSQQ1gdF`,
+          content: `https://cdn.digitalax.xyz/ipfs/QmYF56PqmExGSLntWrbjHWyt6rVsjCjLGiGoUiXXc2Pk3U`,
           uploadDate: DEFAULT_UPLOAD_DATE,
         },
       ],
